@@ -11,7 +11,8 @@ public class DatabaseManager {
     // Méthode pour se connecter à la base de données SQLite
     public boolean connect() {
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:src/test/resources/bddTdee.db");
+            connection = DriverManager.getConnection("jdbc:sqlite:tdeeapp\\src\\test\\resources\\bddTdee.db");
+            
             return true;
         } catch (SQLException e) {
             System.err.println("Erreur de connexion : " + e.getMessage());
