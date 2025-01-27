@@ -11,8 +11,8 @@ public class DatabaseManager {
     // Méthode pour se connecter à la base de données SQLite
     public boolean connect() {
         try {
-            connection = DriverManager.getConnection("jdbc:sqlite:tdeeapp\\src\\test\\resources\\bddTdee.db");
-            
+            connection = DriverManager.getConnection("jdbc:sqlite:tdeeapp\\bddTdee.db");
+
             return true;
         } catch (SQLException e) {
             System.err.println("Erreur de connexion : " + e.getMessage());
@@ -31,36 +31,30 @@ public class DatabaseManager {
         }
     }
 
+    // Méthode pour créer les tables initiales utilisées par l'application
     public void initializeDatabase() {
-        String createWeightHistoryTable = """
-            CREATE TABLE IF NOT EXISTS WeightHistory (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                date DATE NOT NULL,
-                weight FLOAT NOT NULL
-            );
-        """;
 
-        String createCaloriesEatenTable = """
-            CREATE TABLE IF NOT EXISTS CaloriesEaten (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                date DATE NOT NULL,
-                calories INTEGER NOT NULL
-            );
-        """;
-
+        // Pour la table du poids : ID, Date et Value
         String createWeightTable = """
-                CREATE TABLE IF NOT EXISTS weight (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    date TEXT NOT NULL,
-                    value REAL NOT NULL
-                );
-            """;
+                    CREATE TABLE IF NOT EXISTS Weight (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        date DATE NOT NULL,
+                        value FLOAT NOT NULL
+                    );
+                """;
 
+        // Pour la table des calories : ID, Date et Calories
+        String createCaloriesEatenTable = """
+                    CREATE TABLE IF NOT EXISTS CaloriesEaten (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        date DATE NOT NULL,
+                        calories INTEGER NOT NULL
+                    );
+                """;
 
         try (Statement stmt = connection.createStatement()) {
-            stmt.execute(createWeightHistoryTable);
+            stmt.execute(createWeightTable);
             stmt.execute(createCaloriesEatenTable);
-            {{stmt.execute(createWeightTable);}} // Ajout de la création de la table 'weight'
         } catch (SQLException e) {
             System.out.println("Error initializing database: " + e.getMessage());
         }
@@ -76,7 +70,7 @@ public class DatabaseManager {
         try (Statement statement = connection.createStatement()) {
             statement.executeUpdate(sql);
         } catch (SQLException e) {
-            e.printStackTrace(); 
+            e.printStackTrace();
         }
     }
 }
