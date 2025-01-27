@@ -32,13 +32,14 @@ options (gratuites) et du calcul fait par celles-ci. Également, je voulais appr
 
 ## Améliorations futures
 
-L'application fait présentement tout ce qu'elle est supposée : calculer le TDEE précisement, mais j'ai d'autres idées en tête pour l'améliorer :
-    1. La création d'une interface visuelle (probablement JavaFX)
-    2. La possibilité de définir combien de calories manger pour perdre/gagner du poids (selon la vitesse/nombre de calories par exemple)
-    3. L'option de rajouter des recettes avec les ingrédients (quantités qui peuvent être changées), les instructions et les valeurs nutrionnelles (peut-être calculé       
-       calculé automatiquement - Référence à 4.1)
-    4. L'ajout du calcul des calories consommées aujourd'hui (sous forme de grille par exemple) qui va se reset à chaque jour 
-        4.1 Lié ici est l'ajout d'une base de données avec les valeurs nutritionnelles de plusieurs aliments pour faciliter l'entrée
-        4.2 Possiblité d'ajouter une recette et la portion consommées (1/3, 1/4, 1/5, ... et d'afficher les valeurs nutritionnelles pour chaque option)
+L'application fait présentement tout ce qu'elle est supposée : calculer le TDEE précisément, mais j'ai d'autres idées en tête pour l'améliorer :
+- La création d'une interface visuelle (probablement JavaFX)
+- La possibilité de définir combien de calories manger pour perdre/gagner du poids (selon la vitesse/nombre de calories par exemple)
+- L'option de rajouter des recettes avec les ingrédients (quantités qui peuvent être changées), les instructions et les valeurs nutritionnelles (peut-être calculé automatiquement)
+- L'ajout du calcul des calories consommées aujourd'hui (sous forme de grille par exemple) qui va se reset à chaque jour
+  - Lié ici est l'ajout d'une base de données avec les valeurs nutritionnelles de plusieurs aliments pour faciliter l'entrée
+  - Possibilité d'ajouter une recette et la portion consommée (1/3, 1/4, 1/5, ... et d'afficher les valeurs nutritionnelles pour chaque option)
+
+## Licence
 
 Le code de cette application peut-être modifié à votre guise.
